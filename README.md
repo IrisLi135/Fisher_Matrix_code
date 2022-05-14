@@ -20,6 +20,17 @@ This repository contains:
     python source_ndot.py -gamma -1.5 -tmin 1e9
     ```
 
-## Previous publication based on the code:
+## For single signal
+1. Select value for source parameters and then run 'fm.py' as below:
+   ```sh
+   python fm.py Ra, Dec, Mass1, Mass2, inclination, Polarization, Luminosity Distance, initial phase, injection_number -O Output -d detector_name
+   ```
+2. Run 'fm.py' to obtain single .pkl file for Fisher Matrix results.
+
+## For multiple signals
+1. 
+
+
+## Previous publications based on the code:
 1. [Man Leong Chan, Chris Messenger, Ik Siong Heng et al. (2018)](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.97.123014)
 2. [Yufeng Li, Ik Siong Heng, Man Leong Chan et al. (2022)](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.043010)
