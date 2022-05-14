@@ -1,7 +1,7 @@
 # Fisher Matrix code
 Fisher Matrix code for localization by GW detectors.
 
-This repository contains:
+This repository contains main files as below:
 
 1. 'fm.py' for the main file to perform the Fisher Matrix analysis for GW signals by GW detectors.
     Usage for one signal by single detector:
@@ -28,8 +28,15 @@ This repository contains:
 2. Run 'fm.py' to obtain single .pkl file for Fisher Matrix results.
 
 ## For multiple signals
-1. 
-
+1. We generate command lines for multiple signals (multiple rows of 'python fm.py ...') in one file, and submit it to cluster.
+2. For BNS sources which following the delay time distribution, the redshift distribution could be obtained by 'source_ndot.py',
+   then depending on how many sources you need to simulate, a redshift list could be generated.
+   This could achieved by:
+   firstly generate a wanted redshift distribution by run 'source_ndot.py -gamma -1.5 -tmin 1e9', a redshift distribution example
+   '1Gyr_1.5.txt' could be generated;
+   Generate a dense but uniformly distributed redshift list for sampling, such as 'redshift.txt';
+   Run 'rejection_sampling.py' to generate a redshift list (e.g. 'accept_rate_1Gyr_1.txt') which following the delay time distribution (of \gamma = -1.5 and t_min = 1Gyr).
+   Then these redshift could be transformed to luminosity distance as injection parameters of 'fm.py'.
 
 ## Previous publications based on the code:
 1. [Man Leong Chan, Chris Messenger, Ik Siong Heng et al. (2018)](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.97.123014)
